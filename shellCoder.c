@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     unsigned long entryPoint = 0;
 
     if(argc < 3) {
-        printf("usage: %s filename baseAddress entryPointOffset\n", argv[0]);
+        printf("usage: %s filename baseAddress entryPointOffset [trap]\n", argv[0]);
         exit(1);
     }
     
@@ -61,10 +61,13 @@ int main(int argc, char *argv[]) {
   
 
     // compile with -masm=intel
-    __asm__ __volatile__("call %0" ::"r"(entryPoint));
-  
+    if(argv[4] != NULL && atoi(argv[4])) {
+        __asm__ __volatile__("int 3; call %0" ::"r"(entryPoint));
+    } else {
+         __asm__ __volatile__("call %0" ::"r"(entryPoint));
+    }
+        
     puts("\n\n----- Shellcode execution completed -----");
     
     return 0;
 }
-
