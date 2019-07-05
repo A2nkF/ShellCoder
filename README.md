@@ -17,6 +17,7 @@ Clone the code and run `gcc shellCoder.c -o shellCoder -masm=intel`.
 
 `trap`: boolean `[1|0]` to specify whether you want a breakpoint placed right before execution is being transfered to the shellcode. **NOTE**: you need to be in a debugger to catch the SIGTRAP if this option is set to `1`
 
+The `binsh.bin` file contains sample shellcode that spawns a shell :D
 
 ## Examples
 
