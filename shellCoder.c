@@ -13,7 +13,6 @@
 #include <string.h>
 #include <stdint.h>
 
-typedef void(*ptr_t);
 
 void *loadFile(char filename[], void *baseAddr) {
     FILE *fd = NULL;
