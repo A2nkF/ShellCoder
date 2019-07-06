@@ -11,7 +11,9 @@ Clone the code and run `gcc shellCoder.c -o shellCoder -masm=intel`.
 
 `filename`: path to the shellcode file. (e.g `/payloads/shellcode.bin`)
 
-`baseAddress`: address to load the shellcode to in hex (e.g. `0x1337133700`)
+`baseAddress`: address to load the shellcode to in hex (e.g. `0x1337133000`)
+
+**NOTE**: Last three nibbles need to be zero.
 
 `entryPointOffset`: code offset in the shellcode (probably `0x0` if you're working with raw shellcode).
 
@@ -19,9 +21,9 @@ Clone the code and run `gcc shellCoder.c -o shellCoder -masm=intel`.
 
 **NOTE**: you need to be in a debugger to catch the SIGTRAP if this option is set to `1`
 
-The `binsh.bin` file contains sample shellcode that spawns a shell :D
-
 ## Examples
+
+The `binsh.bin` file contains sample shellcode that spawns a shell :D
 
 ```
 ~$ ./shellCoder shellcode.bin 0x123400000000 0 0x0                                  
