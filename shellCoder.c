@@ -1,5 +1,5 @@
 //
-//  main.c
+//  shellCoder.c
 //  shellCoder
 //
 //  Created by A2nkF on 7/5/19.
